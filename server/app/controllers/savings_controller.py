@@ -51,5 +51,3 @@ class SavingsController:
         db.session.delete(saving)
         db.session.commit()
         return jsonify({"message": "Saving deleted successfully"}), 200
-
-    pass
