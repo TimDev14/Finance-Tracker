@@ -10,6 +10,6 @@ class Users(db.Model):
     name = db.Column(db.String(255), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
     password = db.Column(db.String(255), nullable=False)
-    sources = db.relationship("Sources", back_populates="user", lazy=True)
-    transactions = db.relationship("Transactions", back_populates="user", lazy=True)
-    savings = db.relationship("Savings", back_populates="user", lazy=True)
+    admin = db.Column(db.Boolean, default=False)
+
+    linked_accounts = db.relationship("LinkedAccounts", back_populates="user", lazy=True)
