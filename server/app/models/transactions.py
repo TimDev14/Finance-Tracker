@@ -1,10 +1,7 @@
 from ..extensions import db
-from marshmallow import EXCLUDE
 
 class Transactions(db.Model):
     __tablename__ = "transactions"
-
-    unknown = EXCLUDE
 
     id = db.Column(db.Integer, primary_key=True)
     linked_account_id = db.Column(db.Integer, db.ForeignKey("linked_accounts.id"), nullable=False) # e.g., Mpesa, Gmail, Paypal
